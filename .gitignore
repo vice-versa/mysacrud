@@ -1,3 +1,5 @@
 .project
 TestProject/TestProject.sqlite
 TestProject/*.egg-info
+*.pyc
+.pydevproject
