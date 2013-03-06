@@ -32,8 +32,8 @@ setup(name='TestProject',
       keywords='web wsgi bfg pylons pyramid',
       packages=find_packages(),
       include_package_data=True,
-      zip_safe=False,
-      test_suite='testproject',
+      zip_safe=False,   
+      test_suite='sacrud',
       install_requires=requires,
       entry_points="""\
       [paste.app_factory]
