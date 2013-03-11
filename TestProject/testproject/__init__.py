@@ -4,6 +4,8 @@ from sqlalchemy import engine_from_config
 from models import DBSession, Base
 from models import MyModel
 
+from sqlalchemy.event import listen
+from sacrud.position import before_insert
 
 def main(global_config, **settings):
     """ This function returns a Pyramid WSGI application.
@@ -19,6 +21,8 @@ def main(global_config, **settings):
     config.include('sacrud.pyramid_ext')
     settings = config.registry.settings
     settings['sacrud_models'] = (MyModel,)
+    listen(MyModel, "before_insert", before_insert)
+    listen(MyModel, "before_update", before_insert)
     config.scan()
     
     return config.make_wsgi_app()

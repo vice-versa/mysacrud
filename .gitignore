@@ -3,3 +3,8 @@ TestProject/TestProject.sqlite
 TestProject/*.egg-info
 *.pyc
 .pydevproject
+TestProject/.coverage
+TestProject/.coverage/*.*
+TestProject/cover/*.*
+update.sh
+
