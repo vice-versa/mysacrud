@@ -22,7 +22,7 @@ class MyModel(Base):
     id = Column(Integer, primary_key=True)
     name = Column(Text, unique=True)
     value = Column(Integer)
-    position = Column(Integer)
+    position = Column(Integer, default=0)
 
     def __init__(self, name, value, position=0):
         self.name = name
