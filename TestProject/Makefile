@@ -11,5 +11,9 @@ run:
      
 shell:
 	. ../../../env/bin/activate; pshell development.ini
+
+init_db:
+	. ../../../env/bin/activate; initialize_TestProject_db development.ini
+
 	
 	

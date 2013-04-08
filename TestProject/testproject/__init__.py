@@ -1,8 +1,7 @@
 from pyramid.config import Configurator
 from sqlalchemy import engine_from_config
 
-from models import DBSession, Base
-from models import MyModel
+from models import DBSession, Base, Profile, User
 
 from sqlalchemy.event import listen
 from sacrud.position import before_insert
@@ -20,9 +19,7 @@ def main(global_config, **settings):
     config.include('pyramid_jinja2')
     config.include('sacrud.pyramid_ext')
     settings = config.registry.settings
-    settings['sacrud_models'] = (MyModel,)
-    listen(MyModel, "before_insert", before_insert)
-    listen(MyModel, "before_update", before_insert)
+    settings['sacrud_models'] = (User, Profile)
     config.scan()
     
     return config.make_wsgi_app()

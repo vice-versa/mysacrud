@@ -1,0 +1,6 @@
+SQLAlchemy>=0.8.0
+zope.sqlalchemy
+transaction
+webtest
+git+ssh://git@github.com/stefanofontanelli/ColanderAlchemy.git
+git+ssh://git@github.com/sontek/deform_jinja2.git
